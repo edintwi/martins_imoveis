@@ -62,8 +62,8 @@ include('scripts/send_mail.php');
         </div>
     </div>
 
-    <footer id="footer-info">
-        <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142   </p>
+    <footer id="footer-informacao">
+        <p id="diferente">Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142   </p>
     </footer>
 
 </body>
