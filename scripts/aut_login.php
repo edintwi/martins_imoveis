@@ -16,6 +16,7 @@ if(isset($_POST['USER']) && empty($_POST['USER']) == false) {
         $_SESSION['id_usuario'] = $dados['id_usuario'];
         header('Location: ../adm.php');
     }else{
-
+        $_SESSION['error'] = 'Usuário e/ou senha incorreto';
+        Header('Location: ../login.php');
     }
 }

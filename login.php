@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +29,12 @@
                 <br>
                 <input type="password" class="login-input" name="PASS" required>
                 <br>
-              
+                <?php 
+                    if(isset($_SESSION['error']) && empty($_SESSION['error']) == false){
+                        echo   $_SESSION['error'];
+                        $_SESSION['error'] = "";
+                    }
+                ?>
                 <br>
                 <input type="submit" value="Entrar" id="btn-login">
                
