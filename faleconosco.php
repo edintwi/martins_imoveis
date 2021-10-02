@@ -8,6 +8,8 @@ include('scripts/send_mail.php');
     <meta charset="UTF-8">
     <link rel="icon" href="imagens/favicon (1).ico">
     <link rel="stylesheet" type="text/css" href="src/faleconosco.css">
+    <link rel="stylesheet" type="text/css" href="src/main.css">
+    <link rel="stylesheet" type="text/css" href="src/style.css">
     <title>Fale conosco - Martin Imóveis </title>
 </head>
 

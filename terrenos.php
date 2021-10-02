@@ -64,7 +64,7 @@ session_start();
     <?php foreach($dados as $imoveis): ?>
         <div class="container-list">
         <section id="list-casas=">
-        <p> <?php echo $imoveis['titulo'] ?> </p>
+        <p><strong> <?php echo $imoveis['titulo'] ?> </strong></p>
             <div id="list-img"> <img src=<?php echo $imoveis['imagem'] ?> > </div>
             <br>
             <p> Código <?php echo $imoveis['id_imoveis'] ?> </p>

@@ -72,17 +72,22 @@ session_start();
     <?php foreach($dados as $imoveis): ?>
         <div class="container-list">
         <section id="list-casas=">
-        <p> <?php echo $imoveis['titulo'] ?> </p>
+        <p> <strong><?php echo $imoveis['titulo'] ?> </strong></p>
             <div id="list-img"> <img src=<?php echo $imoveis['imagem'] ?> > </div>
             <br>
-            <p> Código <?php echo $imoveis['id_imoveis'] ?> </p>
+            <p> Valor <?php echo $imoveis['valor'] ?> </p>
             <a href="visualizar.php?id=<?php echo $imoveis['id_imoveis']; ?>" >Visualizar</a>
         </section>
     </div>
-    <?php endforeach; ?>    
+    <?php endforeach; ?> 
+
+    
     <footer id="footer-info">
-        <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142</p>
-    </footer>
+        Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142
+        </footer>
+       
+    
     
 </body>
+
 </html>
