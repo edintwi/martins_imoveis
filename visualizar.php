@@ -42,13 +42,13 @@ include('scripts/view.php');
                 
                 </div>
                 <div id="slides">
-                    <img src="<?php echo $dados['imagem'] ?>" >
-                    <img src="imagens/02.jpg">
-                    <img src="imagens/03.jpg">
-                    <img src="imagens/04.jpg">
-                    <img src="imagens/05.jpg">
-                    <img src="imagens/05.jpg">
-                    <img src="imagens/05.jpg">
+                    <img class="img-bom" src="<?php echo $dados['imagem'] ?>" >
+                    <img class="img-bom" src="imagens/02.jpg">
+                    <img class="img-bom" src="imagens/03.jpg">
+                    <img class="img-bom" src="imagens/04.jpg">
+                    <img class="img-bom" src="imagens/05.jpg">
+                    <img class="img-bom" src="imagens/05.jpg">
+                    <img class="img-bom" src="imagens/05.jpg">
                 </div>
                 <!-- End SlidesJS Required: Start Slides -->
                 <!-- SlidesJS Required: Link to jQuery -->
