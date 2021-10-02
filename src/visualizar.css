@@ -177,3 +177,6 @@ body {
 #text-container a:hover{
     background: rgb(104, 217, 245);
 }
+#pre{
+  font-family: 'Noto Sans', sans-serif;
+}

@@ -34,18 +34,20 @@ include('scripts/view.php');
                 <h1><?php echo $dados['titulo'] ?></h1>
                  
                 <h2>Descrição: </h2>
-                <h3 id ="pre"> <pre><?php echo $dados['descricao']  ?></pre</h3>
+                <h3> <pre id="pre"><?php echo $dados['descricao']  ?></pre</h3>
                 <h2>Bairro: <?php echo $dados['bairro'] ?></h2>
                 <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
                 <p>Código: <?php echo $dados['id_imoveis']  ?></p>
-                <a href="https://api.whatsapp.com/send?phone=5521993576574&text=Ol%C3%A1%2C%20tenha%20interesse%20na%20casa%2Fapartamento%20de%20c%C3%B3digo%3A%20%3C%3Fphp%20echo%20%24imoveis%5B'id_imoveis'%5D%3B%20%3F%3E">Entre em contato</a>
+                <a href="https://api.whatsapp.com/send?phone=5521988992142&text=Oi%20estou%20interessado%20em%20um%20Ap%2FCasa.">Entre em contato</a>
                 
                 </div>
                 <div id="slides">
                     <img src="<?php echo $dados['imagem'] ?>" >
-                    <img src="imagens/02.jpg" >
-                    <img src="imagens/03.jpg" >
-                    <img src="imagens/04.jpg" >
+                    <img src="imagens/02.jpg">
+                    <img src="imagens/03.jpg">
+                    <img src="imagens/04.jpg">
+                    <img src="imagens/05.jpg">
+                    <img src="imagens/05.jpg">
                     <img src="imagens/05.jpg">
                 </div>
                 <!-- End SlidesJS Required: Start Slides -->
