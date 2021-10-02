@@ -63,10 +63,12 @@ header {
     background: linear-gradient(0deg, rgba(31, 54, 191, 1) 0%, rgba(104, 217, 245, 1) 100%);
     bottom: 0;
     left: 0;
+    padding-bottom: 50px;
 }
 
 #footer-info p {
-    text-align: center;
+    padding-top: 10px;
+    text-align: center center;
 }
 
 #texto p {
