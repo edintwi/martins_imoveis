@@ -47,13 +47,10 @@ include('scripts/select_all.php');
                             <option value="2"> Casa </option>
                             <option value="3"> Terreno</option>
                         </select>
+                        <label>N° de quartos: </label>
+                        <input type="number" name="quartos">
                         <label>Bairro: </label>
-                        <select name="bairro" >
-                        <option>Selecione</option>
-                        <?php foreach($dados as $imoveis): ?>
-                        <option><?php echo $imoveis['bairro'];?></option>
-                        <?php endforeach; ?>
-                        </select>
+                        <input type="text" name="bairro">
                         <br>
                         <label>Valor: </label>
                         <input type="nuber" name="valor" required>
@@ -63,6 +60,7 @@ include('scripts/select_all.php');
                         <br>
                         <label>Descrição: </label>
                         <textarea id="" name="desc" required></textarea>
+                        <br>
                         <br>
                         <input type="submit" value="Cadastrar">
                     </fieldset>
