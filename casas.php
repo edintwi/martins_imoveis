@@ -1,5 +1,6 @@
 <?php
 include('scripts/list_casas.php');
+include('scripts/select_all.php');
 
 session_start();
 
@@ -40,7 +41,7 @@ session_start();
                     <label>Busca por bairro: </label>
                     <select name="bairro" id="bairro-search">
                         <option>Selecione</option>
-                        <?php foreach($dados as $imoveis): ?>
+                        <?php foreach($bairros as $imoveis): ?>
                         <option><?php echo $imoveis['bairro'];?></option>
                         <?php endforeach; ?>
                     </select>

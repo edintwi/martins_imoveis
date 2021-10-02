@@ -1,11 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['id_usuario']) && empty($_SESSION['id_usuario']) == false){
-    echo 'Seja bem vindo(a)!';
-}else{
-    header('Location: login.php');
-    exit;
-}      
+include('scripts/select_all.php'); 
 ?>
 <html lang="pt-br">
 <head>
@@ -28,30 +23,46 @@ if(isset($_SESSION['id_usuario']) && empty($_SESSION['id_usuario']) == false){
             </nav>
         </div>
         <div align="center" id="bem-vindo" >
+        <?php 
+                if(isset($_SESSION['id_usuario']) && empty($_SESSION['id_usuario']) == false){
+                    echo 'Seja bem vindo(a)!';
+                }else{
+                    header('Location: login.php');
+                    exit;
+                } 
+            ?>
         </div>
         <div id="container">
            <div id="form-container">
-                <form action="">
+           
+                <form method="POST" action="scripts/add_.php">
                     <fieldset id="">
                         <label> Titulo: </label>
-                        <input type="text">
+                        <input type="text" name="titulo" required>
                         <br>
-
-                        <label>Descrição: </label>
-                        <textarea id="" ></textarea>
+                        <label>Categoria: </label>
+                        <select name="categoria">
+                            <option value="0"> Selecione </option>
+                            <option value="1"> Apartamento </option>
+                            <option value="2"> Casa </option>
+                            <option value="3"> Terreno</option>
+                        </select>
+                        <label>Bairro: </label>
+                        <select name="bairro" >
+                        <option>Selecione</option>
+                        <?php foreach($dados as $imoveis): ?>
+                        <option><?php echo $imoveis['bairro'];?></option>
+                        <?php endforeach; ?>
+                        </select>
                         <br>
-                        
-                        <label>Endereço: </label>
-                        <input type="text">
-                        <br>
-
                         <label>Valor: </label>
-                        <input type="nuber">
-
+                        <input type="nuber" name="valor" required>
                         <br>
-                        <label> Imagens: </label>
-                        <input type="file">
-
+                        <label>Imagens: </label>
+                        <input type="file" name="imagens" required>
+                        <br>
+                        <label>Descrição: </label>
+                        <textarea id="" name="desc" required></textarea>
                         <br>
                         <input type="submit" value="Cadastrar">
                     </fieldset>
