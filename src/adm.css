@@ -1,0 +1,25 @@
+#container{
+    display: flex;
+    justify-content: center;
+
+}
+#form-container{
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+label{
+    display: block;
+   
+}
+label, input{
+    margin: 3px 0;
+    
+}
+input{
+    width: 30%;
+}
+textarea, input{
+    resize: none;
+    width: 50%;
+}

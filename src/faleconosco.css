@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap%27');
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#img-banner,
+#img-banner img {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+}
+
+#menu-container {
+    margin: auto;
+    text-align: center;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+nav {
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+}
+nav a {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-right: 2px solid white;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    height: 30px;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    background: rgb(104, 217, 245);
+    background: linear-gradient(0deg, rgba(104, 217, 245, 1) 0%, rgba(31, 54, 191, 1) 100%);
+}
+nav a:hover {
+    background: rgb(104, 217, 245);
+}
+
+header {
+    align-items: center;
+    justify-content: center;
+}
+#footer-info {
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    background: rgb(31, 54, 191);
+    background: linear-gradient(0deg, rgba(31, 54, 191, 1) 0%, rgba(104, 217, 245, 1) 100%);
+    position: fixed;
+    bottom:0;
+    left:0;
+    
+}
+#footer-info p{
+    text-align: center;
+}
+
+#texto p {
+    font-family: 'Noto Sans', sans-serif;
+    width: 20%;
+    text-align: justify;
+}
+
+#texto-email {
+    width: 50%;
+    font-size: 100%;
+    padding-bottom: 10%;
+}
+
+#texto-email a {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#sua-info {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#container-conosco {
+    display: flex;
+    font-family: 'Noto Sans', sans-serif;
+    width: 90%;
+}
+
+.text-normal {
+    width: 80%;
+    text-align: justify;
+}
+
+#paragrafo {
+    text-align: justify;
+    width: 100%;
+    margin-left: 5%;
+}
+
+form {
+    padding-top: 5%;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+}
