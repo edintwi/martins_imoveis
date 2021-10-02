@@ -1,7 +1,6 @@
 <?php 
 include('scripts/connection.php');
 include('scripts/view.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +32,12 @@ include('scripts/view.php');
         <div class="container"> 
                 <div id="text-container">
                 <h1><?php echo $dados['titulo'] ?></h1>
-                
+                 
                 <h2>Descrição: </h2>
                 <p><?php echo $dados['descricao'] ?></p>
                 <h2>Bairro: <?php echo $dados['bairro'] ?></h2>
-                <h2>Valor: R$ <?php echo $dados['valor'] ?></h2>
-                <p>Código: <?php echo $dados['id_imoveis'] ?></p>
+                <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
+                <p>Código: <?php echo $dados['id_imoveis']  ?></p>
                 <a href="https://api.whatsapp.com/send?phone=5521993576574&text=Ol%C3%A1%2C%20tenha%20interesse%20na%20casa%2Fapartamento%20de%20c%C3%B3digo%3A%20%3C%3Fphp%20echo%20%24imoveis%5B'id_imoveis'%5D%3B%20%3F%3E">Entre em contato</a>
                 
                 </div>
@@ -75,5 +74,7 @@ include('scripts/view.php');
               });
             });
           </script>
+
+         
 </body>
 </html>
