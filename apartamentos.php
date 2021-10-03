@@ -1,6 +1,5 @@
 <?php
 include('scripts/list_apartamentos.php');
-include('scripts/select_all.php');
 session_start();
 
 ?>
@@ -33,22 +32,34 @@ session_start();
             <form action="">
                 <ul>  
                 <li>
-                    <label> Região: </label>
-                    <select name="">
-                        <option>Selecione</option>  
+                <label>Busca por zonas: </label>
+                    <select name="zonas" id="zonas_search">
+                        <option>Selecione</option>
+                        <option value="1">Zona Central</option>
+                        <option value="2">Zona Sul</option>
+                        <option value="3">Zona Oeste</option>
+                        <option value="4">Zona Norte</option>
                     </select>
                    
                 </li>
                 <li>
-                    <label> Bairro: </label>
-                    <select name="bairro-search" id="bairro-search">
+                <label>Busca por bairro: </label>
+                    <select name="bairro" id="bairro-search">
                         <option>Selecione</option>
+                        <?php foreach($bairros as $bairro): ?>
+                        <option><?php echo $bairro['bairro'];?></option>
+                        <?php endforeach; ?>
                     </select>
                 </li>
                 <li>
-                    <label> Valor</label>
-                    <select name="valor-search" id="valor-search">
-                    <option>Selecione</option>
+                <label> Busca por valor: </label>
+                    <select name="valor" id="valor-search">
+                        <option>Selecione</option>
+                        <?php foreach($dados as $imoveis): ?>
+                        <option><?php echo $imoveis['valor'];?></option>
+                        <?php endforeach; ?>
+                </select>
+
                 </select>
                 </li>
                 <li> 
@@ -79,5 +90,9 @@ session_start();
     <footer id="footer-info">
         <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142</p>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="src/js/select.js"></script>
+
 </body>
 </html>
