@@ -35,7 +35,7 @@ include('scripts/select_all.php');
         <div id="container">
            <div id="form-container">
            
-                <form method="POST" action="scripts/add_.php">
+                <form method="POST" action="scripts/add.php">
                     <fieldset id="">
                         <label> Titulo: </label>
                         <input type="text" name="titulo" required>
@@ -56,7 +56,7 @@ include('scripts/select_all.php');
                         <input type="nuber" name="valor" required>
                         <br>
                         <label>Imagens: </label>
-                        <input type="file" name="imagens" required>
+                        <input type="file" name="imagens" >
                         <br>
                         <label>Descrição: </label>
                         <textarea id="" name="desc" required></textarea>
