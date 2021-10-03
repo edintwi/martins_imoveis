@@ -60,7 +60,7 @@ include('scripts/view.php');
                 <!-- End SlidesJS Required -->
                 <!-- SlidesJS Required: Link to jquery.slides.js -->
                 <script src="src/js/jquery.slides.min.js"></script>
-            </div>
+            
         </div>
 
         <script>

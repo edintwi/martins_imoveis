@@ -1,6 +1,5 @@
 <?php
 include('scripts/list_casas.php');
-include('scripts/select_all.php');
 
 session_start();
 
@@ -31,18 +30,24 @@ session_start();
             </nav>
         </div>
         <div id="filter">
-            <form method="GET" action="scripts/search.php">
+            <form method="GET" action="casas.php">
                 <ul>
                 <li>
-                    <label id="busca-cod" name="cod">Busca por código</label>
-                    <input type="search" id="code-search">
+                <label>Busca por zonas: </label>
+                    <select name="zonas" id="zonas_search">
+                        <option>Selecione</option>
+                        <option value="1">Zona Central</option>
+                        <option value="2">Zona Sul</option>
+                        <option value="3">Zona Oeste</option>
+                        <option value="4">Zona Norte</option>
+                    </select>
                 </li>    
                 <li>
                     <label>Busca por bairro: </label>
                     <select name="bairro" id="bairro-search">
                         <option>Selecione</option>
-                        <?php foreach($bairros as $imoveis): ?>
-                        <option><?php echo $imoveis['bairro'];?></option>
+                        <?php foreach($bairros as $bairro): ?>
+                        <option><?php echo $bairro['bairro'];?></option>
                         <?php endforeach; ?>
                     </select>
                 </li>
@@ -85,9 +90,10 @@ session_start();
     <footer id="footer-info">
         <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142</p>
         </footer>
-       
     
-    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="src/js/select.js"></script>
+
 </body>
 
 </html>
