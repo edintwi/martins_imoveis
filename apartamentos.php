@@ -1,5 +1,6 @@
 <?php
 include('scripts/list_apartamentos.php');
+include('scripts/select_all.php');
 session_start();
 
 ?>
@@ -30,25 +31,28 @@ session_start();
         </div>
         <div id="filter">
             <form action="">
-                <ul>
+                <ul>  
                 <li>
-                    <label id="busca-cod">Busca por código</label>
-                    <input type="search" id="code-search">
-                </li>    
+                    <label> Região: </label>
+                    <select name="">
+                        <option>Selecione</option>  
+                    </select>
+                   
+                </li>
                 <li>
-                    <label>Busca por bairro: </label>
+                    <label> Bairro: </label>
                     <select name="bairro-search" id="bairro-search">
                         <option>Selecione</option>
                     </select>
                 </li>
                 <li>
-                    <label> Busca por valor: </label>
+                    <label> Valor</label>
                     <select name="valor-search" id="valor-search">
                     <option>Selecione</option>
                 </select>
                 </li>
                 <li> 
-                    <label>Busca por Nº de quartos: </label>
+                    <label> Nº de quartos: </label>
                     <select name="quartos-search" id="quartos-search">
                     <option>Selecione</option>
                     </select></li>

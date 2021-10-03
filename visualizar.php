@@ -42,14 +42,18 @@ include('scripts/view.php');
                 
                 </div>
                 <div id="slides">
-                    <img class="img-bom" src="<?php echo $dados['imagem'] ?>" >
-                    <img class="img-bom" src="imagens/02.jpg">
-                    <img class="img-bom" src="imagens/03.jpg">
-                    <img class="img-bom" src="imagens/04.jpg">
-                    <img class="img-bom" src="imagens/05.jpg">
-                    <img class="img-bom" src="imagens/05.jpg">
-                    <img class="img-bom" src="imagens/05.jpg">
+                <?php $dir = $dados['diretorio_thumb'];
+                    $files = scandir($dir); 
+                      
+                ?>     
+                <?php foreach ($files as $file){ ?>
+                    <?php $caminho = $dir."/".$file?>
+                    <?php if ($file != '.' && $file != '..'){ ?>
+                    <img class="img-bom" src="<?php echo $caminho ?>">    
+                <?php }}; ?>    
                 </div>
+
+              
                 <!-- End SlidesJS Required: Start Slides -->
                 <!-- SlidesJS Required: Link to jQuery -->
                 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -58,10 +62,6 @@ include('scripts/view.php');
                 <script src="src/js/jquery.slides.min.js"></script>
             </div>
         </div>
-
-        <footer id="footer_visualizar">
-            <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142 </p>
-        </footer>
 
         <script>
             $(function() {
@@ -79,5 +79,9 @@ include('scripts/view.php');
           </script>
 
          
+        <footer id="footer_visualizar">
+            <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142 </p>
+        </footer>
+
 </body>
 </html>
