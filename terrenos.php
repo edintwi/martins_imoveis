@@ -21,7 +21,7 @@ session_start();
         </div>
         <div id="menu-container">
             <nav>
-                <a href="index.php">Iníco</a>
+                <a href="index.php">Início</a>
                 <a href="casas.php">Casas</a>
                 <a href="apartamentos.php">Apartamentos</a>
                 <a href="terrenos.php">Terrenos</a>
