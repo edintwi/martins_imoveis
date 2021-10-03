@@ -67,7 +67,7 @@ session_start();
         <p> <strong> <?php echo $imoveis['titulo'] ?> </strong></p>
             <div id="list-img"> <img src=<?php echo $imoveis['imagem'] ?> > </div>
             <br>
-            <p> Código <?php echo $imoveis['id_imoveis'] ?> </p>
+            <p> <b>Valor:</b> <?php echo number_format($imoveis['valor'],2,",","."); ?> </p>
             <a href="visualizar.php?id=<?php echo $imoveis['id_imoveis']; ?>" >Visualizar</a>
         </section>
     </div>
