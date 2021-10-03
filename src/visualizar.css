@@ -193,4 +193,17 @@ a:hover.slidesjs-stop {
 
 #pre {
     font-family: 'Noto Sans', sans-serif;
+    white-space: pre-wrap;
+}
+
+#footer_visualizar {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    background: rgb(31, 54, 191);
+    background: linear-gradient(0deg, rgba(31, 54, 191, 1) 0%, rgba(104, 217, 245, 1) 100%);
+    bottom: 0;
+    left: 0;
+    position: absolute;
 }

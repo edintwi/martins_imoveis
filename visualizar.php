@@ -34,7 +34,7 @@ include('scripts/view.php');
                 <h1><?php echo $dados['titulo'] ?></h1>
                  
                 <h2>Descrição: </h2>
-                <h3> <pre id="pre"><?php echo $dados['descricao']  ?></pre</h3>
+                <h3> <pre id="pre"><?php echo $dados['descricao']  ?></pre></h3>
                 <h2>Bairro: <?php echo $dados['bairro'] ?></h2>
                 <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
                 <p>Código: <?php echo $dados['id_imoveis']  ?></p>
@@ -59,7 +59,7 @@ include('scripts/view.php');
             </div>
         </div>
 
-        <footer id="footer-info">
+        <footer id="footer_visualizar">
             <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142 </p>
         </footer>
 

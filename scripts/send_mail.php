@@ -4,7 +4,7 @@ if(isset($_POST['name']) && !empty($_POST['name'])){
     $email = addslashes ($_POST['email']);
     $msg = addslashes ($_POST['msg']);
     
-    $to = "martinsimoveis@martinsimoveis.com";
+    $to = "foreverfacil@gmail.com";
     $assunto = "Fale Conosco | Martins Imóveis";
     $corpo = "Nome.$name. - E-mail.$email. - Mensagem.$msg";
 
