@@ -63,9 +63,6 @@ session_start();
                     <?php foreach($quartos as $quarto): ?>
                         <option value = "<?php echo $quarto['quartos'] ?>"><?php echo $quarto['quartos'];?></option>
                         <?php endforeach; ?>
-                        <input type="range">
-
-
                     </select></li>
                 <li>
                     <input type="submit" value="Buscar">

@@ -1,5 +1,6 @@
 <?php
 include('scripts/list_terrenos.php');
+include('scripts/quartos.php');
 session_start();
 
 ?>
@@ -29,7 +30,7 @@ session_start();
             </nav>
         </div>
         <div id="filter">
-            <form method="GET" action="casas.php">
+        <form method="get" action="terrenos.php">
                 <ul>
                 <li>
                 <label>Busca por zonas: </label>
@@ -60,10 +61,11 @@ session_start();
                 </select>
                 </li>
                 <li> 
-                    <label>Busca por Nº de quartos: </label>
+                <label>Busca por Nº de quartos: </label>
                     <select name="quartos" id="quartos-search">
-                    <option>Selecione</option>
-                    </select></li>
+                    <?php foreach($quartos as $quarto): ?>
+                        <option value = "<?php echo $quarto['quartos'] ?>"><?php echo $quarto['quartos'];?></option>
+                        <?php endforeach; ?>
                 <li>
                     <input type="submit" value="Buscar">
                 </li>    
