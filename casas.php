@@ -1,6 +1,7 @@
 <?php
+include('scripts/quartos.php');
+include('scripts/list_casas.php');
 session_start();
-include ('scripts/list_casas.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +29,7 @@ include ('scripts/list_casas.php');
             </nav>
         </div>
         <div id="filter">
-            <form method="GET" action="scripts/search_casas.php">
+            <form method="get" action="casas.php">
                 <ul>
                 <li>
                 <label>Busca por zonas: </label>
@@ -38,17 +39,18 @@ include ('scripts/list_casas.php');
                         <option value="2">Zona Sul</option>
                         <option value="3">Zona Oeste</option>
                         <option value="4">Zona Norte</option>
+                       
                     </select>
                 </li>    
                 <li>
                     <label>Busca por bairro: </label>
-                    <select name="bairro" id="bairro-search" required>
+                    <select name="bairro" id="bairro-search" >
                         <option value= "">Selecione</option>
                     </select>
                 </li>
                 <li>
                     <label> Busca por valor: </label>
-                    <select name="valor" id="valor-search" required>
+                    <select name="valor" id="valor-search" >
                         <option value= "">Selecione</option>
                         <?php foreach($dados as $imoveis): ?>
                         <option value="<?php  echo $imoveis['valor']?>"><?php echo $imoveis['valor'];?></option>
@@ -57,15 +59,18 @@ include ('scripts/list_casas.php');
                 </li>
                 <li> 
                     <label>Busca por Nº de quartos: </label>
-                    <select name="quartos" id="quartos-search" required>
-                    <option value="">Selecione</option>
-
-                    <?php foreach($dados as $imoveis): ?>
-                        <option value = "<?php echo $imoveis['quartos'] ?>"><?php echo $imoveis['quartos'];?></option>
+                    <select name="quartos" id="quartos-search">
+                    <?php foreach($quartos as $quarto): ?>
+                        <option value = "<?php echo $quarto['quartos'] ?>"><?php echo $quarto['quartos'];?></option>
                         <?php endforeach; ?>
+                        <input type="range">
+
+
                     </select></li>
                 <li>
                     <input type="submit" value="Buscar">
+                    
+            
                 </li>    
                 </ul>
                 
