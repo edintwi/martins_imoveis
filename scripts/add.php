@@ -11,8 +11,7 @@ $hoje = date('d/m/Y');
 
 //falta por as imagens
 
-if($titulo && $categoria){
-    $sql = $pdo->prepare("INSERT INTO imoveis (titulo, descricao, quartos, id_categoria, valor, bairro, data) VALUES(:titulo, :descricao, :quartos, :id_categoria, :valor, :bairro, :data)");
+    $sql = $pdo->prepare("INSERT INTO imoveis (titulo, descricao, quartos, id_categoria, valor, bairro) VALUES(:titulo, :descricao, :quartos, :id_categoria, :valor, :bairro)");
     
     $sql->bindValue(':titulo', $titulo);
     $sql->bindValue(':descricao', $descricao);
@@ -20,12 +19,6 @@ if($titulo && $categoria){
     $sql->bindValue(':id_categoria', $categoria);
     $sql->bindValue(':valor', $valor);
     $sql->bindValue(':bairro', $bairro);
-    $sql->bindValue(':data', $hoje);
 
+  
     $sql->execute();
-
-    header("Location: ../list_adm.php");
-}else{
-    header('Location: ../adm.php');
-    exit;
-}

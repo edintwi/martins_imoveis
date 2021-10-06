@@ -1,10 +1,30 @@
 <?php 
 include('connection.php');
 
-$sql = $pdo->query('SELECT valor 
-FROM imoveis 
-HAVING valor > 300000;');
+$bairro = filter_input(INPUT_GET, 'bairro');
+$valor = filter_input(INPUT_GET, 'valor');
+$quartos  = filter_input(INPUT_GET, 'quartos');
 
-$bairros = $sql->fetchAll(PDO::FETCH_ASSOC);
+if($bairro){
+    $resultados = $pdo->prepare("SELECT * FROM `imoveis` WHERE id_categoria = 2 AND id_zonas LIKE :bairro AND valor LIKE :valor AND quartos LIKE :quartos ORDER BY id_imoveis DESC");
+    $resultados->bindValue(':bairro', $bairro);
+    $resultados->bindValue(':valor', $valor);
+    $resultados->bindValue(':quartos', $quartos);
+    
+    $resultados->execute();
+    if($resultados->rowCount() > 0){
+        $_SESSION['busca'] = $resultados->fetchAll(pdo::FETCH_ASSOC);
+        header("Location: ../casas.php");
+       
+    }else{
+        
+        header("Location: ../casas.php");
+        echo 'Nada encontrado!';
+        exit;
+    }
+        
+}
+
+
 
 
