@@ -6,7 +6,7 @@ $valor = filter_input(INPUT_GET, 'valor');
 $quartos  = filter_input(INPUT_GET, 'quartos');
 
 if($bairro){
-    $resultados = $pdo->prepare("SELECT * FROM `imoveis` WHERE id_categoria = 2 AND id_zonas LIKE :bairro AND valor LIKE :valor AND quartos LIKE :quartos ORDER BY id_imoveis DESC");
+    $resultados = $pdo->prepare("SELECT * FROM `imoveis` WHERE id_categoria = 2 AND id_zonas LIKE :bairro AND valor LIKE :valor AND quartos = :quartos ORDER BY id_imoveis DESC");
     $resultados->bindValue(':bairro', $bairro);
     $resultados->bindValue(':valor', $valor);
     $resultados->bindValue(':quartos', $quartos);

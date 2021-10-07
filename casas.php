@@ -33,8 +33,8 @@ session_start();
                 <ul>
                 <li>
                 <label>Busca por zonas: </label>
-                    <select name="zonas" id="zonas_search" required>
-                        <option >Selecione</option>
+                    <select name="zonas" id="zonas_search" > 
+                    <option selected="true" disabled="disabled">Selecione</option>
                         <option value="1">Zona Central</option>
                         <option value="2">Zona Sul</option>
                         <option value="3">Zona Oeste</option>
@@ -51,7 +51,7 @@ session_start();
                 <li>
                     <label> Busca por valor: </label>
                     <select name="valor" id="valor-search" >
-                        <option value= "">Selecione</option>
+                    <option selected="true" disabled="disabled">Selecione</option>
                         <?php foreach($dados as $imoveis): ?>
                         <option value="<?php  echo $imoveis['valor']?>"><?php echo $imoveis['valor'];?></option>
                         <?php endforeach; ?>
