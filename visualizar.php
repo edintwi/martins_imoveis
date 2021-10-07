@@ -1,86 +1,96 @@
 <?php 
-include('scripts/connection.php');
-include('scripts/view.php');
+  include "include/header.php";
+  include('scripts/connection.php');
+  include('scripts/view.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagens/favicon (1).ico">
-    <link rel="stylesheet" href="src/main.css">
-    <link rel="stylesheet" href="src/visualizar.css">
-
-    <title></title>
-</head>
-<body>
-    <header>
-        <div id="img-banner">
-            <img src="imagens/okokok.jpg">
-        </div>
-        <div id="menu-container">
-            <nav>
-                <a href="index.php">Início</a>
-                <a href="casas.php">Casas</a>
-                <a href="apartamentos.php">Apartamentos</a>
-                <a href="terrenos.php">Terrenos</a>
-                <a href="faleconosco.php">Fale conosco</a>
-            </nav>
-        </div>
      
-        <div class="container"> 
-                <div id="text-container">
-                <h1><?php echo $dados['titulo'] ?></h1>
-                 
-                <h2>Descrição: </h2>
-                <h3> <pre id="pre"><?php echo $dados['descricao']  ?></pre></h3>
-                <h2>Bairro: <?php echo $dados['bairro'] ?></h2>
-                <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
-                <p>Código: <?php echo $dados['id_imoveis']  ?></p>
-                <a href="https://api.whatsapp.com/send?phone=5521988992142&text=Oi%20estou%20interessado%20em%20um%20Ap%2FCasa.">Entre em contato</a>
-                
-                </div>
-                <div id="slides">
-                <?php $dir = $dados['diretorio_thumb'];
+    <section class="container"> 
+        <div class="text-container w-50">
+          <h1><?php echo $dados['titulo'] ?></h1>
+          <h2>Bairro: <?php echo $dados['bairro'] ?></h2>
+           <p style="white-space: break-spaces;"><?php echo $dados['descricao']  ?></p>
+            <h2>Endereço: </h2>
+            <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
+            <a href=" https://api.whatsapp.com/send?phone=5521993576574&text=Ol%C3%A1%2C%20tenha%20interesse%20na%20casa%2Fapartamento%20de%20c%C3%B3digo%3A%20%24%7Bcodigo%7D!">Entre em contato</a>
+        </div>
+
+        <?php $dir = $dados['diretorio_thumb'];
                     $files = scandir($dir); 
                       
                 ?>     
-                <?php foreach ($files as $file){ ?>
-                    <?php $caminho = $dir."/".$file?>
-                    <?php if ($file != '.' && $file != '..'){ ?>
-                    <img class="img-bom" src="<?php echo $caminho ?>">    
-                <?php }}; ?>    
-                </div>
+<!-- Images used to open the lightbox -->
+<div class="row w-50">
+<?php foreach ($files as $file){ ?>
+<?php $caminho = $dir."/".$file?>
+<?php if ($file != '.' && $file != '..'){ ?>
+  <div class="column">
+    <img src="<?php echo $caminho ?>" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+  </div>
+<?php }}; ?>    
 
-              
-                <!-- End SlidesJS Required: Start Slides -->
-                <!-- SlidesJS Required: Link to jQuery -->
-                <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-                <!-- End SlidesJS Required -->
-                <!-- SlidesJS Required: Link to jquery.slides.js -->
-                <script src="src/js/jquery.slides.min.js"></script>
-            
-        </div>
-        <footer id="footer-informacao">
-        <p id="diferente">Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142  </p>
-    </footer>
+</div>
 
-        <script>
-            $(function() {
-              $('#slides').slidesjs({
-                width: 940,
-                height: 528,
-                play: {
-                  active: true,
-                  auto: true,
-                  interval: 4000,
-                  swap: true
-                }
-              });
-            });
-          </script>
+<!-- The Modal/Lightbox -->
+
+<div id="myModal" class="modal">
+  
+<span class="close cursor" onclick="closeModal()">&times;</span>
+
+  <div class="modal-content">
+  <?php foreach ($files as $file){ ?>
+<?php $caminho = $dir."/".$file?>
+<?php if ($file != '.' && $file != '..'){ ?> 
+  <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="<?php echo $caminho ?>" style="width:100%">
+    </div>
+    <?php }}; ?>   
+</div>
 
 
-</body>
-</html>
+    </section>
+
+    <script>
+        // Open the Modal
+        function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        }
+
+        // Close the Modal
+        function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
+
+<?php include "include/footer.php"; ?>
