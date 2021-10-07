@@ -17,39 +17,101 @@
 
 <!-- Images used to open the lightbox -->
 <div class="row w-50">
-  <?php $dir = $dados['diretorio_thumb'];
-                    $files = scandir($dir); 
-                      
-                ?>     
-                <?php foreach ($files as $file){ ?>
-                    <?php $caminho = $dir."/".$file?>
-                    <?php if ($file != '.' && $file != '..'){ ?>
-                    <img class="img-bom" src="<?php echo $caminho ?>">    
-                <?php }}; ?>  
-    </div>
-   
-  
+  <div class="column">
+    <img src="imagens/02.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/03.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/04.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/01.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/02.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/03.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/04.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/01.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/02.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/03.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/04.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/01.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/02.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/03.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/04.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/01.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/02.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/03.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/04.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/01.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/02.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/03.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow w-100">
+  </div>
+  <div class="column">
+    <img src="imagens/04.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow w-100">
+  </div>
 </div>
 
 <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal">
-  
   <span class="close cursor" onclick="closeModal()">&times;</span>
-  
-    <div class="modal-content">
-    <?php foreach ($files as $file){ ?>
-  <?php $caminho = $dir."/".$file?>
-  <?php if ($file != '.' && $file != '..'){ ?> 
-    <div class="mySlides">
-        <div class="numbertext">1 / 4</div>
-        <img src="<?php echo $caminho ?>" style="width:100%">
-      </div>
-      <?php }}; ?>   
-  </div>
-  
-  
-      </section> 
+  <div class="modal-content">
 
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="imagens/01.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="imagens/02.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="imagens/03.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="imagens/04.jpg" style="width:100%">
+    </div>
   </div>
 </div>
 

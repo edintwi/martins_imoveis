@@ -836,7 +836,7 @@ footer {
   
   /* Hide the slides by default */
   .mySlides {
-    display: none;
+    /*display: none;*/  
   }
   
   /* Next & previous buttons */

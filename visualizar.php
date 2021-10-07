@@ -3,30 +3,35 @@
   include('scripts/connection.php');
   include('scripts/view.php');
 ?>
+
      
     <section class="container"> 
         <div class="text-container w-50">
           <h1><?php echo $dados['titulo'] ?></h1>
-          <h2>Bairro: <?php echo $dados['bairro'] ?></h2>
+          <h2>Bairro: <?php include('scripts/bairro.php') ?></h2>
            <p style="white-space: break-spaces;"><?php echo $dados['descricao']  ?></p>
-            <h2>Endereço: </h2>
+           <p style="white-space: break-spaces;"><h3>Endereço: <?php echo $dados['endereco']  ?> </p> </h3>
             <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
             <a href=" https://api.whatsapp.com/send?phone=5521993576574&text=Ol%C3%A1%2C%20tenha%20interesse%20na%20casa%2Fapartamento%20de%20c%C3%B3digo%3A%20%24%7Bcodigo%7D!">Entre em contato</a>
         </div>
 
-        <?php $dir = $dados['diretorio_thumb'];
-                    $files = scandir($dir); 
-                      
-                ?>     
+<?php $dir = $dados['diretorio_thumb'];
+    $files = scandir($dir); 
+?>  
+
 <!-- Images used to open the lightbox -->
+
 <div class="row w-50">
+<?php $num = 1; ?>
 <?php foreach ($files as $file){ ?>
 <?php $caminho = $dir."/".$file?>
 <?php if ($file != '.' && $file != '..'){ ?>
   <div class="column">
-    <img src="<?php echo $caminho ?>" onclick="openModal();currentSlide(2)" class="hover-shadow w-100">
+    <img src="<?php echo $caminho ?>" onclick="openModal();currentSlide(<?php echo $num ?>)" class="hover-shadow w-100">
   </div>
-<?php }}; ?>    
+<?php $num++ ?>
+<?php }}; ?>
+
 
 </div>
 
@@ -36,15 +41,16 @@
   
 <span class="close cursor" onclick="closeModal()">&times;</span>
 
-  <div class="modal-content">
+  
+<div class="modal-content">
   <?php foreach ($files as $file){ ?>
-<?php $caminho = $dir."/".$file?>
-<?php if ($file != '.' && $file != '..'){ ?> 
-  <div class="mySlides">
-      <div class="numbertext">1 / 4</div>
+  <?php $caminho = $dir."/".$file?>
+  <?php if ($file != '.' && $file != '..'){ ?> 
+    <div class="mySlides">
+      <div class="numbertext"></div>
       <img src="<?php echo $caminho ?>" style="width:100%">
     </div>
-    <?php }}; ?>   
+<?php }}; ?>   
 </div>
 
 
@@ -92,5 +98,7 @@
         captionText.innerHTML = dots[slideIndex-1].alt;
         }
     </script>
+
+    
 
 <?php include "include/footer.php"; ?>
