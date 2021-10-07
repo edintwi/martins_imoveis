@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('scripts/list_casas.php');
 
 ?>
 <html lang="pt-br">
@@ -49,14 +50,30 @@ session_start();
                         </select>
                         <label>N° de quartos: </label>
                         <input type="number" name="quartos">
+                        <label>Região </label>
+                        <select name="zonas" id="zonas_search" required>
+                            <option >Selecione</option>
+                            <option value="1">Zona Central</option>
+                            <option value="2">Zona Sul</option>
+                            <option value="3">Zona Oeste</option>
+                            <option value="4">Zona Norte</option>
+                        
+                        </select>
+
                         <label>Bairro: </label>
-                        <input type="text" name="bairro">
+                        <select name="bairro" id="bairro-search" >
+                            <option value= "">Selecione</option>
+                        </select>
+
                         <br>
                         <label>Valor: </label>
-                        <input type="nuber" name="valor" required>
+                        <input type="number" name="valor" required>
                         <br>
-                        <label>Imagens: </label>
-                        <input type="file" name="imagens">
+                        <label>Imagem principal (Somente uma): </label>
+                        <input type="file" name="thumb">
+                        <br>
+                        <label>Demais imagens: </label>
+                        <input type="file" name="all_imgs">
                         <br>
                         <label>Descrição: </label>
                         <textarea id="" name="desc" required></textarea>
@@ -70,5 +87,7 @@ session_start();
         <footer id="footer-info">
             <p>Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142</p>
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="src/js/select.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ session_start();
     <link rel="stylesheet" href="src/main.css">
     <link rel="stylesheet" href="src/casas.css">
     <link rel="icon" href="imagens/favicon (1).ico">
-    <title> Martins Imoveis | Apartamentos </title>
+    <title> Martins Imoveis | Terrenos </title>
 </head>
 <body>
     <header>
