@@ -62,6 +62,9 @@ include('scripts/view.php');
                 <script src="src/js/jquery.slides.min.js"></script>
             
         </div>
+        <footer id="footer-informacao">
+        <p id="diferente">Rua Rio da Prata, 245, Sala 105, Bangu | Tel - 2401-2142 |Cel - 98899-2124 / 98755-2142 / 2401-2142  </p>
+    </footer>
 
         <script>
             $(function() {
