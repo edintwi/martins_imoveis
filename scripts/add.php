@@ -7,6 +7,7 @@ $quartos = filter_input(INPUT_POST, 'quartos');
 $bairro = filter_input(INPUT_POST, 'bairro');
 $valor = filter_input(INPUT_POST, 'valor');
 $descricao = filter_input(INPUT_POST, 'desc');
+$endereco = filter_input(INPUT_POST, 'endereco');
 $hoje = date('Y/m/d');
 
 $thumb = $_FILES['thumb']['name'];
@@ -50,7 +51,8 @@ $sql = $pdo->query("INSERT INTO `imoveis`(
     `diretorio_thumb`,
     `id_categoria`,
     `data`,
-    `valor`
+    `valor`,
+    `endereco`
     )
 VALUES(
 NULL,
@@ -62,7 +64,8 @@ NULL,
     '$caminho_thumb',
     '$categoria',
     '$hoje',
-    '$valor'
+    '$valor',
+    '$endereco'
     )");
 
 header('Location: ../listar_adm.php');
