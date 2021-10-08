@@ -2,14 +2,14 @@
   include "include/header.php";
   include('scripts/connection.php');
   include('scripts/view.php');
-  include('scripts/bairro.php')
+  
 ?>
 
      
     <section class="container"> 
         <div class="text-container w-50">
           <h1><?php echo $dados['titulo'] ?></h1>
-          <h2>Bairro: <?php echo $bairro['bairro'] ?></h2>
+          <h2>Bairro: <?php echo $dados['bairro'] ?></h2>
            <p style="white-space: break-spaces;"><?php echo $dados['descricao']  ?></p>
            <p style="white-space: break-spaces;"><h3>Endereço: <?php echo $dados['endereco']  ?> </p> </h3>
            <h2>Código: <?php echo $dados['id_imoveis']  ?></h2>

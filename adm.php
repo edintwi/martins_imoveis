@@ -53,10 +53,10 @@ include('include/header adm.php');
                         <label>Valor: </label>
                         <input type="number" name="valor" required>
                         <br>
-                        <label>Imagem principal (Somente uma): </label>
+                        <label>Imagem principal (Somente uma imagem): </label>
                         <input type="file" name="thumb">
                         <br>
-                        <label>Demais imagens: </label>
+                        <label>Demais imagens: (Máximo de vinte imagens): </label>
                         <input type="file" name="all_imgs[]" multiple>
                         <br>
                         <label>Descrição: </label>

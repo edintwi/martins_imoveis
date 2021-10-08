@@ -1,6 +1,9 @@
 <?php 
+
+session_start();
 include "scripts/connection.php";
 include "include/header adm.php";
+
 
 
 $lista = [];
@@ -9,7 +12,15 @@ if($sql->rowCount() > 0){
     $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
+
 <body>
+
+<?php if(isset($_SESSION['id_usuario']) && empty($_SESSION['id_usuario']) == false){
+    }else{
+        header('Location: login.php');
+      exit;
+    }?> 
+
 <table border="1">
   <tr>
     <th>CÓDIGO</th>

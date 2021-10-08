@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 
-$sqlString = ('SELECT imoveis.* FROM imoveis INNER JOIN bairros ON imoveis.id_zonas=bairros.id_zonas WHERE id_categoria=1 ORDER BY id_imoveis DESC'.
+$sqlString = ('SELECT imoveis.* FROM imoveis INNER JOIN bairros ON imoveis.id_zonas=bairros.id_zonas WHERE id_categoria=1'.
                (!empty($_GET['zonas']) ? ' AND bairros.id_regiao = :zonas' : "").
                (!empty($_GET['quartos']) ? ' AND imoveis.quartos = :quartos' : "").
                (!empty($_GET['bairro']) ? ' AND bairros.id_zonas = :bairro' : ""));

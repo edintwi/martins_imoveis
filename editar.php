@@ -1,29 +1,36 @@
 <?php 
 include "include/header adm.php";
 include "scripts/connection.php";
+session_start();
 
-$info = [];
-$id_imoveis = filter_input(INPUT_GET, 'id');
-if($id_imoveis){
-    $sql = $pdo->prepare("SELECT * FROM imoveis WHERE id_imoveis = :id_imoveis");
-    $sql->bindValue(':id_imoveis', $id_imoveis);
-    $sql->execute();
-
-    if($sql->rowCount() > 0){
-        $info = $sql->fetch(PDO::FETCH_ASSOC);
-
+ if(isset($_SESSION['id_usuario']) && empty($_SESSION['id_usuario']) == false){
+    $info = [];
+    $id_imoveis = filter_input(INPUT_GET, 'id');
+    if($id_imoveis){
+        $sql = $pdo->prepare("SELECT * FROM imoveis WHERE id_imoveis = :id_imoveis");
+        $sql->bindValue(':id_imoveis', $id_imoveis);
+        $sql->execute();
+    
+        if($sql->rowCount() > 0){
+            $info = $sql->fetch(PDO::FETCH_ASSOC);
+    
+        }else{
+            header('Location:listar_adm.php');
+            exit;
+        }
     }else{
         header('Location:listar_adm.php');
-        exit;
     }
 }else{
-    header('Location:listar_adm.php');
+    header('Location: login.php');
+  exit;
 }
-session_start();
+
 
 
 ?>
 <body>
+
         <div align="center" id="bem-vindo" >
         <?php 
                 if(isset($_SESSION['id_usuario']) && empty($_SESSION['id_usuario']) == false){
@@ -39,10 +46,8 @@ session_start();
            
                 <form method="POST" action="scripts/editar_imoveis.php"  enctype="multipart/form-data" >
                     <fieldset>
-                        <input type="hidden" id="id" value="<?php echo $info['id_imoveis']?>">
-                        <label> Titulo: </label>
+                      <label> Titulo: </label>
                         <input type="text" name="titulo" value="<?php echo $info['titulo']?>"required>
-                        <br>
                         <label>Categoria: </label>
                         <select name="categoria">
                             <option value="0"> Selecione </option>
@@ -59,17 +64,16 @@ session_start();
                             <option value="2">Zona Sul</option>
                             <option value="3">Zona Oeste</option>
                             <option value="4">Zona Norte</option>
-                        
                         </select>
-
-                        <label>Bairro: </label>
+                         <label>Bairro: </label>
                         <select name="bairro" id="bairro-search" >
                             <option value="<?php echo $info['id_zonas ']?>">Selecione</option>
                         </select>
+                        <input type="hidden" name="id" id="id" value="<?php echo $info['id_imoveis']?>">
 
                         <br>
                         <label>Endereço: </label>
-                        <input type="text" name="endereço" id="endereço-search">
+                        <input type="text" name="endereco" id="endereco-search">
                         <label>Valor: </label>
                         <input type="number" name="valor" value="<?php echo $info['valor']?>" required>
                         <br>
