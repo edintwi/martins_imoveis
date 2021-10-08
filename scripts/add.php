@@ -15,13 +15,13 @@ $thumb = $_FILES['thumb']['name'];
 $all_imgs = $_FILES['all_imgs']['name'];
 $nome_thumb = "thumb.jpg";
 
-if ($categoria = 1){
+if ($categoria == 1){
     $tipoimovel = 'A';
 }
-elseif ($categoria = 2){
+elseif ($categoria == 2){
     $tipoimovel = 'C';
 }
-elseif ($categoria = 3){
+elseif ($categoria == 3){
     $tipoimovel = 'T';
 }
 
