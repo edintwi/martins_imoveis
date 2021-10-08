@@ -1,11 +1,13 @@
 <?php 
+include 'connection.php';
+$bairros = [];
+$bairro = filter_input(INPUT_GET, 'bairro');
+if($bairro){
+    $sql = $pdo->prepare("SELECT bairro FROM bairros LEFT JOIN imoveis ON bairros.id_zonas = imoveis.id_zonas");
+    $sql->bindValue(':bairro', $bairro);
+    $sql->execute();
+    if($sql->rowCount() > 0){
+        $bairros = $sql->fetch(PDO::FETCH_ASSOC);
+    }
 
-include('connection.php');
-
-$bairro = [];
-$sql2 = $pdo->query("SELECT bairros FROM imoveis INNER JOIN bairros ON bairros.id_zonas=bairro.id_zonas");
-
-$dados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
-
-
-?>
+}

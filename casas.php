@@ -56,7 +56,7 @@
                 <div id="list-img"> <img class="w-100" src="<?php echo $imoveis['imagem'] ?>" > </div>
             <br>
                 <p> <b>Valor</b> <?php echo number_format($imoveis['valor'],2,",","."); ?> </p>
-            <a href="visualizar.php?id=<?php echo $imoveis['id_imoveis']; ?>" >Visualizar</a>
+            <a href="visualizar.php?id=<?php echo $imoveis['id_imoveis']; ?>?id_zonas=<?php echo $imoveis['id_zonas']; ?>" >Visualizar</a>
         </section>
     </div>
     <?php endforeach; ?> 
