@@ -15,30 +15,36 @@ $thumb = $_FILES['thumb']['name'];
 $all_imgs = $_FILES['all_imgs']['name'];
 $nome_thumb = "thumb.jpg";
 
+if ($categoria = 1){
+    $tipoimovel = 'A';
+}
+elseif ($categoria = 2){
+    $tipoimovel = 'C';
+}
+elseif ($categoria = 3){
+    $tipoimovel = 'T';
+}
 
-
-//dados de conexão com o banco, na ordem, host, usuario, senha, e nome do banco utilizado
 $conexao = mysqli_connect('127.0.0.1', 'root', '', 'martins_imoveis');
-//lista informações da tabela entidade (estrutura), uma delas refere-se ao proximo auto_increment
+
 $tabela_imoveis = mysqli_query($conexao, "SHOW TABLE STATUS LIKE 'imoveis'");
 $proximo_id = mysqli_fetch_assoc($tabela_imoveis)['Auto_increment'];
 echo $proximo_id;
 
-mkdir("../imagens_imoveis/original_".$proximo_id);
+$caminho_imagens = "imagens_imoveis/original_".$proximo_id.$tipoimovel."/"; //IMAGEM QUE SERÁ EXIBIDA NA LISTAGEM
+$caminho_thumb = "imagens_imoveis/original_".$proximo_id.$tipoimovel."/"; //IMAGENS QUE IRÃO APARECER NO SLIDER
 
-move_uploaded_file($_FILES['thumb']['tmp_name'], '../imagens_imoveis/original_teste1/'.$nome_thumb);
 
+mkdir("../imagens_imoveis/original_".$proximo_id.$tipoimovel);
 
-$caminho_imagens = "imagens_imoveis/original_teste1/"; //IMAGEM QUE SERÁ EXIBIDA NA LISTAGEM
-$caminho_thumb = "imagens_imoveis/original_teste1/"; //IMAGENS QUE IRÃO APARECER NO SLIDER
-
+move_uploaded_file($_FILES['thumb']['tmp_name'], '../imagens_imoveis/original_'.$proximo_id.$tipoimovel.'/'.$nome_thumb);
 
 if(count($_FILES['all_imgs']['tmp_name']) > 0){
   
     for($q=0; $q < count($_FILES['all_imgs']['tmp_name']); $q++){
         
-        $nome_arquivos = 'img'.$q.'.jpg';
-        move_uploaded_file($_FILES['all_imgs']['tmp_name'][$q], "../imagens_imoveis/original_".$proximo_id."/".$nome_arquivos);
+        $nome_arquivos = $q.'.jpg';
+        move_uploaded_file($_FILES['all_imgs']['tmp_name'][$q], "../imagens_imoveis/original_".$proximo_id.$tipoimovel."/".$nome_arquivos);
     }
 };
 
@@ -53,11 +59,7 @@ $sql = $pdo->query("INSERT INTO `imoveis`(
     `id_categoria`,
     `data`,
     `valor`,
-<<<<<<< Updated upstream
     `endereco`
-=======
-    'endereco'
->>>>>>> Stashed changes
     )
 VALUES(
 NULL,
