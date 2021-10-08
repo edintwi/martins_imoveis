@@ -14,7 +14,7 @@
            <p style="white-space: break-spaces;"><h3>Endereço: <?php echo $dados['endereco']  ?> </p> </h3>
            <h2>Código: <?php echo $dados['id_imoveis']  ?></h2>
            <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
-            <a href=" https://api.whatsapp.com/send?phone=5521993576574&text=Ol%C3%A1%2C%20tenha%20interesse%20na%20casa%2Fapartamento%20de%20c%C3%B3digo%3A%20%24%7Bcodigo%7D!">Entre em contato</a>
+            <a href="https://api.whatsapp.com/send?phone=5521987552142&text=Oi%20estou%20interessado%20em%20um%20Ap%2FCasa%2FTerreno!!">Entre em contato</a>
         </div>
 
 <?php $dir = $dados['diretorio_thumb'];
