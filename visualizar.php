@@ -2,16 +2,18 @@
   include "include/header.php";
   include('scripts/connection.php');
   include('scripts/view.php');
+
 ?>
 
      
     <section class="container"> 
         <div class="text-container w-50">
           <h1><?php echo $dados['titulo'] ?></h1>
-          <h2>Bairro: <?php include('scripts/bairro.php') ?></h2>
+          <h2>Bairro: <?php   ?></h2>
            <p style="white-space: break-spaces;"><?php echo $dados['descricao']  ?></p>
            <p style="white-space: break-spaces;"><h3>Endereço: <?php echo $dados['endereco']  ?> </p> </h3>
-            <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
+           <h2>Código: <?php echo $dados['id_imoveis']  ?></h2>
+           <h2>Valor: R$ <?php echo number_format($dados['valor'],2,",","."); ?></h2>
             <a href=" https://api.whatsapp.com/send?phone=5521993576574&text=Ol%C3%A1%2C%20tenha%20interesse%20na%20casa%2Fapartamento%20de%20c%C3%B3digo%3A%20%24%7Bcodigo%7D!">Entre em contato</a>
         </div>
 

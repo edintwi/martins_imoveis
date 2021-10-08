@@ -9,6 +9,7 @@ $valor = filter_input(INPUT_POST, 'valor');
 $descricao = filter_input(INPUT_POST, 'desc');
 $endereco = filter_input(INPUT_POST, 'endereco');
 $hoje = date('Y/m/d');
+$endereco = filter_input(INPUT_POST, 'endereco');
 
 $thumb = $_FILES['thumb']['name'];
 $all_imgs = $_FILES['all_imgs']['name'];
@@ -52,7 +53,11 @@ $sql = $pdo->query("INSERT INTO `imoveis`(
     `id_categoria`,
     `data`,
     `valor`,
+<<<<<<< Updated upstream
     `endereco`
+=======
+    'endereco'
+>>>>>>> Stashed changes
     )
 VALUES(
 NULL,

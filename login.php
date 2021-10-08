@@ -9,7 +9,7 @@ session_start();
     <title> Martins Imóveis | Login </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" href="imagens/favicon (1).ico">
-    <link rel='stylesheet' type='text/css' media='screen' href='src/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='src/login.css'>
     <script src='src/script.js'></script>
 </head>
 <body>

@@ -49,7 +49,7 @@ include('include/header adm.php');
 
                         <br>
                         <label>Endereço: </label>
-                        <input type="text" name="endereço" id="endereço-search">
+                        <input type="text" name="endereco" id="endereco-search">
                         <label>Valor: </label>
                         <input type="number" name="valor" required>
                         <br>

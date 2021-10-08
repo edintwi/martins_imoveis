@@ -2,7 +2,10 @@
 
 include('connection.php');
 
-$sqlString = ('SELECT bairros FROM imoveis INNER JOIN bairros ON bairros.id_zonas=bairro.id_zonas WHERE id_categoria=').
-(!empty($_GET['bairro']) ? ' AND bairros.id_zonas = :bairro' : "");
+$bairro = [];
+$sql2 = $pdo->query("SELECT bairros FROM imoveis INNER JOIN bairros ON bairros.id_zonas=bairro.id_zonas");
+
+$dados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
