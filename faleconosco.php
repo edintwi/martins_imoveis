@@ -19,7 +19,7 @@
             <a href="mailto:martinsimoveis@martinsimoveis.com">martinsimoveis@martinsimoveis.com</a>
             </p>
             <p id="voz"><strong>Canais de Voz:</strong> </p> 
-            <p> 2401-2142 | 3462-8101 | 8899-2142 | 8755-2142 </p>
+            <p> Tel: 2401-2142 | Cel: 98899-2142 | 98755-2142 </p>
 
         <div class="maps">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.7422794039717!2d-43.467249685034666!3d-22.885976885022384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bdfc005466bd1%3A0x864ac2c396423286!2sR.%20Rio%20da%20Prata%2C%20245%20-%20Bangu%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2021820-096!5e0!3m2!1spt-BR!2sbr!4v1632855790028!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

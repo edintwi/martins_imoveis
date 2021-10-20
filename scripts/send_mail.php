@@ -15,6 +15,8 @@ if(isset($_POST['name']) && !empty($_POST['name'])){
     mail($to, $assunto, $corpo, $cabecalho);
     echo "<script>alert('Mensagem enviada com Sucesso!);</script>";
 
+    header('Location:../faleconosco.php');
+
 }
 
 

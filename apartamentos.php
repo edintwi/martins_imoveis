@@ -29,7 +29,7 @@
                     <select name="valor" id="valor-search" >
                         <option selected="true" disabled="disabled">Selecione</option>  
                             <?php foreach($dados as $imoveis): ?>
-                              <option value="<?php  echo $imoveis['valor']?>"><?php echo $imoveis['valor'];?></option>
+                              <option value="<?php  echo $imoveis['valor'],('SELECT MIN FROM valor;')?>"><?php echo $imoveis['valor'];?></option>
                             <?php endforeach; ?>
                      </select>
                 </li>
@@ -55,7 +55,7 @@
             <p> <strong><?php echo $imoveis['titulo'] ?> </strong></p>
                 <div id="list-img"> <img class="w-100" src="<?php echo $imoveis['imagem'] ?>" > </div>
             <br>
-                <p> <b>Valor</b> <?php echo number_format($imoveis['valor'],2,",","."); ?> </p>
+                <p> <b>Valor R$ </b> <?php echo number_format($imoveis['valor'],2,",","."); ?> </p>
             <a href="visualizar.php?id=<?php echo $imoveis['id_imoveis']; ?>" >Visualizar</a>
         </section>
     </div>

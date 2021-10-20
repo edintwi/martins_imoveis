@@ -25,7 +25,7 @@ elseif ($categoria == 3){
     $tipoimovel = 'T';
 }
 
-$conexao = mysqli_connect('127.0.0.1', 'root', '', 'martins_imoveis');
+$conexao = mysqli_connect('mysql1.martinsimoveis.com', 'martinsimoveis', '', '1973fttqem');
 
 $tabela_imoveis = mysqli_query($conexao, "SHOW TABLE STATUS LIKE 'imoveis'");
 $proximo_id = mysqli_fetch_assoc($tabela_imoveis)['Auto_increment'];

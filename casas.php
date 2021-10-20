@@ -25,16 +25,27 @@
                     </select>
                 </li>
                 <li>
-                <label> Busca por valor: </label>
+
+                <li>
+                <label> Insira o Valor Mínimo: </label>
                     <select name="valor" id="valor-search" >
                         <option selected="true" disabled="disabled">Selecione</option>  
                             <?php foreach($dados as $imoveis): ?>
-                              <option value="<?php  echo $imoveis['valor']?>"><?php echo $imoveis['valor'];?></option>
+                            <?php  echo $imoveis['valor'],('SELECT MIN FROM valor');?>"><?php echo number_format($imoveis['valor'],2,",",".");?></option> -->
+                            <?php endforeach; ?>
+                     </select>
+                </li>
+                <li>
+                <label> Insira o Valor Máximo: </label>
+                    <select name="valor" id="valor-search" >
+                        <option selected="true" disabled="disabled">Selecione</option>  
+                            <?php foreach($dados as $imoveis): ?>
+                              <option value="<?php  echo $imoveis['valor']?>"><?php echo number_format($imoveis['valor'],2,",",".");?></option>
                             <?php endforeach; ?>
                      </select>
                 </li>
                 <li> 
-                <label>Busca por Nº de quartos: </label>
+                    <label>Busca por Nº de quartos: </label>
                     <select name="quartos" id="quartos-search">
                         <?php foreach($quartos as $quarto): ?>
                             <option value = "<?php echo $quarto['quartos'] ?>"><?php echo $quarto['quartos'];?></option>
@@ -55,7 +66,7 @@
             <p> <strong><?php echo $imoveis['titulo'] ?> </strong></p>
                 <div id="list-img"> <img class="w-100" src="<?php echo $imoveis['imagem'] ?>" > </div>
             <br>
-                <p> <b>Valor</b> <?php echo number_format($imoveis['valor'],2,",","."); ?> </p>
+                <p> <b>Valor R$ </b> <?php echo number_format($imoveis['valor'],2,",","."); ?> </p>
             <a href="visualizar.php?id=<?php echo $imoveis['id_imoveis']; ?>?id_zonas=<?php echo $imoveis['id_zonas']; ?>" >Visualizar</a>
         </section>
     </div>

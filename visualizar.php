@@ -29,7 +29,7 @@
 <?php $caminho = $dir."/".$file?>
 <?php if ($file != '.' && $file != '..'){ ?>
   <div class="column">
-    <img src="<?php echo $caminho ?>" onclick="openModal();currentSlide(<?php echo $num ?>)" class="hover-shadow w-100">
+   <img src="<?php echo $caminho ?>" onclick="openModal();currentSlide(<?php echo $num ?>)" class="hover-shadow w-100">
   </div>
 <?php $num++ ?>
 <?php }}; ?>
@@ -51,6 +51,8 @@
     <div class="mySlides">
       <div class="numbertext"></div>
       <img src="<?php echo $caminho ?>" style="width:100%">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 <?php }}; ?>   
 </div>
@@ -59,6 +61,8 @@
     </section>
 
     <script>
+
+    
         // Open the Modal
         function openModal() {
         document.getElementById("myModal").style.display = "block";
@@ -75,6 +79,7 @@
         // Next/previous controls
         function plusSlides(n) {
         showSlides(slideIndex += n);
+        
         }
 
         // Thumbnail image controls
@@ -99,6 +104,20 @@
         dots[slideIndex-1].className += " active";
         captionText.innerHTML = dots[slideIndex-1].alt;
         }
+        document.onkeydown = function(event) {
+       event = event || window.event;
+      switch (event.keyCode || event.which) {
+        case 37:
+            clearInterval(autoscroll);
+            navigate( 'prev' );
+            autoscroll = setInterval(function() {navigate( 'next' )}, 5000);
+            break;
+        case 39:
+            clearInterval(autoscroll);
+            navigate( 'next' );
+            autoscroll = setInterval(function() {navigate( 'next' )}, 5000);
+            break;
+    }}
     </script>
 
     
