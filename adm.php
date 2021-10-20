@@ -25,7 +25,6 @@ include('include/header adm.php');
                         <br>
                         <label>Categoria: </label>
                         <select name="categoria">
-                            <option disabled> Selecione </option>
                             <option value="1"> Apartamento </option>
                             <option value="2"> Casa </option>
                             <option value="3"> Terreno</option>
